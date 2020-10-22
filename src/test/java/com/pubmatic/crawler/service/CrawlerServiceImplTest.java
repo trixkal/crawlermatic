@@ -32,9 +32,17 @@ public class CrawlerServiceImplTest {
 
     @Test
     public void testCrawl() {
-        final Optional<PageInfo> info = crawlerService.crawl("http://google.com");
+        final Optional<PageInfo> info = crawlerService.crawl("http://ebay.com");
         assertThat(info).isPresent();
-        assertThat(info.get().getUrl()).contains("http://google.com");
+        assertThat(info.get().getUrl()).contains("http://ebay.com");
+        assertThat(info.get().getLinks().size()).isGreaterThan(10);
+    }
+
+    @Test
+    public void testCrawlPubmatic() {
+        final Optional<PageInfo> info = crawlerService.crawl("http://pubmatic.com");
+        assertThat(info).isPresent();
+        assertThat(info.get().getUrl()).contains("http://pubmatic.com");
         assertThat(info.get().getLinks().size()).isGreaterThan(10);
     }
 

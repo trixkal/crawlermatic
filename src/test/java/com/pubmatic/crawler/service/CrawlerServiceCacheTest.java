@@ -39,6 +39,16 @@ public class CrawlerServiceCacheTest {
 
     @Test
     public void testCacheOnCrawl() {
+        final Optional<PageInfo> info = crawlerService.crawl("https://ebay.com");
+        assertThat(info).isPresent();
+        assertThat(info.get().getUrl()).contains("https://ebay.com");
+        assertThat(info.get().getLinks().size()).isGreaterThan(20);
+
+        assertThat(applicationCache.get("https://ebay.com")).isNotNull();
+    }
+
+    @Test
+    public void testCacheOnCrawlPubmatic() {
         final Optional<PageInfo> info = crawlerService.crawl("https://pubmatic.com");
         assertThat(info).isPresent();
         assertThat(info.get().getUrl()).contains("https://pubmatic.com");
