@@ -1,0 +1,46 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.pubmatic.crawler.configuration.AppProperties",
+      "name": "app",
+      "type": "com.pubmatic.crawler.configuration.AppProperties"
+    },
+    {
+      "sourceType": "com.pubmatic.crawler.configuration.AppProperties",
+      "name": "app.crawler",
+      "sourceMethod": "getCrawler()",
+      "type": "com.pubmatic.crawler.configuration.AppProperties$CrawlerProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.pubmatic.crawler.configuration.AppProperties$CrawlerProperties",
+      "defaultValue": 0,
+      "name": "app.crawler.default-depth",
+      "description": "default depth for web crawler.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.pubmatic.crawler.configuration.AppProperties$CrawlerProperties",
+      "defaultValue": false,
+      "name": "app.crawler.follow-redirects",
+      "description": "follow redirects for the given url",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.pubmatic.crawler.configuration.AppProperties$CrawlerProperties",
+      "defaultValue": 0,
+      "name": "app.crawler.max-depth-allowed",
+      "description": "max depth allowed for a request based on service capability and SLAs to\n prevent DOS",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.pubmatic.crawler.configuration.AppProperties$CrawlerProperties",
+      "defaultValue": 0,
+      "name": "app.crawler.time-out",
+      "description": "timeout for http requests in seconds",
+      "type": "java.lang.Integer"
+    }
+  ]
+}

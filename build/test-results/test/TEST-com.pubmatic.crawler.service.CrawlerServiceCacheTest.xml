@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.pubmatic.crawler.service.CrawlerServiceCacheTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-22T16:47:05" hostname="FF-Admins-MacBook-Pro.local" time="1.074">
+  <properties/>
+  <testcase name="testCacheOnCrawl" classname="com.pubmatic.crawler.service.CrawlerServiceCacheTest" time="1.074"/>
+  <system-out><![CDATA[10:46:51.543 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.pubmatic.crawler.service.CrawlerServiceCacheTest]
+10:46:51.547 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+10:46:51.553 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+10:46:51.567 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.pubmatic.crawler.service.CrawlerServiceCacheTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+10:46:51.588 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.pubmatic.crawler.service.CrawlerServiceCacheTest]: class path resource [com/pubmatic/crawler/service/CrawlerServiceCacheTest-context.xml] does not exist
+10:46:51.589 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.pubmatic.crawler.service.CrawlerServiceCacheTest]: class path resource [com/pubmatic/crawler/service/CrawlerServiceCacheTestContext.groovy] does not exist
+10:46:51.589 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.pubmatic.crawler.service.CrawlerServiceCacheTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+10:46:51.643 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.pubmatic.crawler.service.CrawlerServiceCacheTest]: using defaults.
+10:46:51.647 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+10:46:51.655 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+10:46:51.656 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/TransactionDefinition]
+10:46:51.656 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3320f56, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7c7a1156, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@781306af, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7d673893, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6e3cc0d6, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@42e09ce6, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@22a6cc6b, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6641cb0c, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6ef38d62, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@28b23bf6]
+10:46:51.659 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.pubmatic.crawler.service.CrawlerServiceCacheTest]
+10:46:51.659 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.pubmatic.crawler.service.CrawlerServiceCacheTest]
+10:46:51.662 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.pubmatic.crawler.service.CrawlerServiceCacheTest]
+10:46:51.662 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.pubmatic.crawler.service.CrawlerServiceCacheTest]
+10:46:51.663 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.pubmatic.crawler.service.CrawlerServiceCacheTest]
+10:46:51.663 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.pubmatic.crawler.service.CrawlerServiceCacheTest]
+10:46:51.666 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@1f01329d testClass = CrawlerServiceCacheTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6801bca8 testClass = CrawlerServiceCacheTest, locations = '{}', classes = '{class com.pubmatic.crawler.Application, class com.pubmatic.crawler.configuration.ApplicationConfiguration}', contextInitializerClasses = '[]', activeProfiles = '{local}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@e7e8512, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@178d29df, [ImportsContextCustomizer@5fb95593 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration]], org.springframework.boot.test.context.SpringBootTestContextCustomizer@352d1517, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1aa63e75, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3af2ed4a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null].
+10:46:51.666 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.pubmatic.crawler.service.CrawlerServiceCacheTest]
+10:46:51.667 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.pubmatic.crawler.service.CrawlerServiceCacheTest]
+10:46:51.710 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+10:46:51.711 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+10:46:51.711 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+10:46:51.712 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [test] PropertySource with highest search precedence
+10:46:51.714 [Test worker] DEBUG org.springframework.core.env.MutablePropertySources - Adding [inline] PropertySource with highest search precedence
+10:46:51.717 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+10:46:51.717 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [Inlined Test Properties] PropertySource with highest search precedence
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.5.6.RELEASE)
+
+[2020-10-22 10:47:02,017] [Test worker] [INFO] [com.pubmatic.crawler.service.CrawlerServiceCacheTest] [serviceName:web-crawlermatic-service] => Starting CrawlerServiceCacheTest on FF-Admins-MacBook-Pro.local with PID 21819 (started by ff_rocmer in /Users/ff_rocmer/Documents/txk/web-crawlermatic-service)
+[2020-10-22 10:47:02,018] [Test worker] [DEBUG] [com.pubmatic.crawler.service.CrawlerServiceCacheTest] [serviceName:web-crawlermatic-service] => Running with Spring Boot v1.5.6.RELEASE, Spring v4.3.10.RELEASE
+[2020-10-22 10:47:02,019] [Test worker] [INFO] [com.pubmatic.crawler.service.CrawlerServiceCacheTest] [serviceName:web-crawlermatic-service] => The following profiles are active: local
+[2020-10-22 10:47:02,155] [Test worker] [INFO] [org.springframework.web.context.support.GenericWebApplicationContext] [serviceName:web-crawlermatic-service] => Refreshing org.springframework.web.context.support.GenericWebApplicationContext@76369118: startup date [Thu Oct 22 10:47:02 CST 2020]; root of context hierarchy
+[2020-10-22 10:47:02,982] [Test worker] [INFO] [org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] [serviceName:web-crawlermatic-service] => JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[2020-10-22 10:47:03,095] [Test worker] [INFO] [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] [serviceName:web-crawlermatic-service] => Bean 'org.springframework.cache.annotation.ProxyCachingConfiguration' of type [org.springframework.cache.annotation.ProxyCachingConfiguration$$EnhancerBySpringCGLIB$$7acc602e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-10-22 10:47:03,100] [Test worker] [INFO] [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] [serviceName:web-crawlermatic-service] => Bean 'org.springframework.cache.jcache.config.ProxyJCacheConfiguration' of type [org.springframework.cache.jcache.config.ProxyJCacheConfiguration$$EnhancerBySpringCGLIB$$5401ec8e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-10-22 10:47:03,135] [Test worker] [INFO] [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] [serviceName:web-crawlermatic-service] => Bean 'org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$$EnhancerBySpringCGLIB$$6f4024d2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-10-22 10:47:03,153] [Test worker] [INFO] [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] [serviceName:web-crawlermatic-service] => Bean 'spring.cache-org.springframework.boot.autoconfigure.cache.CacheProperties' of type [org.springframework.boot.autoconfigure.cache.CacheProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-10-22 10:47:03,161] [Test worker] [INFO] [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] [serviceName:web-crawlermatic-service] => Bean 'cacheManagerCustomizers' of type [org.springframework.boot.autoconfigure.cache.CacheManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-10-22 10:47:03,165] [Test worker] [INFO] [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] [serviceName:web-crawlermatic-service] => Bean 'org.springframework.boot.autoconfigure.cache.CaffeineCacheConfiguration' of type [org.springframework.boot.autoconfigure.cache.CaffeineCacheConfiguration$$EnhancerBySpringCGLIB$$a106be1a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-10-22 10:47:03,264] [Test worker] [INFO] [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] [serviceName:web-crawlermatic-service] => Bean 'cacheManager' of type [org.springframework.cache.caffeine.CaffeineCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-10-22 10:47:03,265] [Test worker] [INFO] [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] [serviceName:web-crawlermatic-service] => Bean 'cacheAutoConfigurationValidator' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$CacheManagerValidator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2020-10-22 10:47:03,754] [Test worker] [INFO] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/crawler],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<com.pubmatic.crawler.model.PageTreeInfo> com.pubmatic.crawler.rest.CrawlerApiController.getWebPageTreeInfo(java.lang.String,java.lang.Integer)
+[2020-10-22 10:47:03,756] [Test worker] [INFO] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+[2020-10-22 10:47:03,757] [Test worker] [INFO] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+[2020-10-22 10:47:03,758] [Test worker] [INFO] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+[2020-10-22 10:47:03,760] [Test worker] [INFO] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2020-10-22 10:47:03,761] [Test worker] [INFO] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2020-10-22 10:47:03,978] [Test worker] [INFO] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/health || /health.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,java.security.Principal)
+[2020-10-22 10:47:03,979] [Test worker] [INFO] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/mappings || /mappings.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+[2020-10-22 10:47:03,980] [Test worker] [INFO] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/info || /info.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+[2020-10-22 10:47:03,980] [Test worker] [INFO] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+[2020-10-22 10:47:03,981] [Test worker] [INFO] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+[2020-10-22 10:47:03,983] [Test worker] [INFO] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/loggers/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.get(java.lang.String)
+[2020-10-22 10:47:03,983] [Test worker] [INFO] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/loggers/{name:.*}],methods=[POST],consumes=[application/vnd.spring-boot.actuator.v1+json || application/json],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.set(java.lang.String,java.util.Map<java.lang.String, java.lang.String>)
+[2020-10-22 10:47:03,984] [Test worker] [INFO] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/loggers || /loggers.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+[2020-10-22 10:47:03,985] [Test worker] [INFO] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/trace || /trace.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+[2020-10-22 10:47:03,986] [Test worker] [INFO] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+[2020-10-22 10:47:03,986] [Test worker] [INFO] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/env || /env.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+[2020-10-22 10:47:03,987] [Test worker] [INFO] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+[2020-10-22 10:47:03,987] [Test worker] [INFO] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+[2020-10-22 10:47:03,988] [Test worker] [INFO] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/logfile || /logfile.json],methods=[GET || HEAD]}" onto public void org.springframework.boot.actuate.endpoint.mvc.LogFileMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws javax.servlet.ServletException,java.io.IOException
+[2020-10-22 10:47:03,988] [Test worker] [INFO] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+[2020-10-22 10:47:03,989] [Test worker] [INFO] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}" onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException
+[2020-10-22 10:47:03,990] [Test worker] [INFO] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/dump || /dump.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+[2020-10-22 10:47:03,991] [Test worker] [INFO] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped "{[/auditevents || /auditevents.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public org.springframework.http.ResponseEntity<?> org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint.findByPrincipalAndAfterAndType(java.lang.String,java.util.Date,java.lang.String)
+[2020-10-22 10:47:04,115] [Test worker] [INFO] [springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-10-22 10:47:04,328] [Test worker] [INFO] [org.springframework.boot.test.mock.web.SpringBootMockServletContext] [serviceName:web-crawlermatic-service] => Initializing Spring FrameworkServlet ''
+[2020-10-22 10:47:04,329] [Test worker] [INFO] [org.springframework.test.web.servlet.TestDispatcherServlet] [serviceName:web-crawlermatic-service] => FrameworkServlet '': initialization started
+[2020-10-22 10:47:04,358] [Test worker] [INFO] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-10-22 10:47:04,358] [Test worker] [INFO] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-10-22 10:47:04,372] [Test worker] [INFO] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] [serviceName:web-crawlermatic-service] => Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2020-10-22 10:47:04,507] [Test worker] [INFO] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] [serviceName:web-crawlermatic-service] => Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@76369118: startup date [Thu Oct 22 10:47:02 CST 2020]; root of context hierarchy
+[2020-10-22 10:47:04,575] [Test worker] [WARN] [org.springframework.boot.autoconfigure.thymeleaf.AbstractTemplateResolverConfiguration] [serviceName:web-crawlermatic-service] => Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+[2020-10-22 10:47:04,799] [Test worker] [INFO] [org.springframework.test.web.servlet.TestDispatcherServlet] [serviceName:web-crawlermatic-service] => FrameworkServlet '': initialization completed in 470 ms
+[2020-10-22 10:47:05,004] [Test worker] [INFO] [org.springframework.context.support.DefaultLifecycleProcessor] [serviceName:web-crawlermatic-service] => Starting beans in phase 2147483647
+[2020-10-22 10:47:05,004] [Test worker] [INFO] [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper] [serviceName:web-crawlermatic-service] => Context refreshed
+[2020-10-22 10:47:05,022] [Test worker] [INFO] [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper] [serviceName:web-crawlermatic-service] => Found 1 custom documentation plugin(s)
+[2020-10-22 10:47:05,059] [Test worker] [INFO] [springfox.documentation.spring.web.scanners.ApiListingReferenceScanner] [serviceName:web-crawlermatic-service] => Scanning for api listing references
+[2020-10-22 10:47:05,116] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: findByPrincipalAndAfterAndTypeUsingGET_1
+[2020-10-22 10:47:05,243] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_1
+[2020-10-22 10:47:05,245] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_2
+[2020-10-22 10:47:05,246] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_3
+[2020-10-22 10:47:05,248] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_4
+[2020-10-22 10:47:05,249] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_5
+[2020-10-22 10:47:05,252] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_6
+[2020-10-22 10:47:05,253] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_7
+[2020-10-22 10:47:05,254] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_8
+[2020-10-22 10:47:05,255] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_9
+[2020-10-22 10:47:05,257] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_10
+[2020-10-22 10:47:05,259] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_11
+[2020-10-22 10:47:05,261] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_12
+[2020-10-22 10:47:05,262] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_13
+[2020-10-22 10:47:05,264] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_14
+[2020-10-22 10:47:05,266] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_15
+[2020-10-22 10:47:05,277] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_16
+[2020-10-22 10:47:05,280] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_17
+[2020-10-22 10:47:05,284] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_18
+[2020-10-22 10:47:05,287] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_19
+[2020-10-22 10:47:05,291] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_20
+[2020-10-22 10:47:05,297] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_21
+[2020-10-22 10:47:05,299] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingHEAD_1
+[2020-10-22 10:47:05,305] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_22
+[2020-10-22 10:47:05,306] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_23
+[2020-10-22 10:47:05,312] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_24
+[2020-10-22 10:47:05,313] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: invokeUsingGET_25
+[2020-10-22 10:47:05,316] [Test worker] [INFO] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [serviceName:web-crawlermatic-service] => Generating unique operation named: valueUsingGET_1
+[2020-10-22 10:47:05,338] [Test worker] [INFO] [com.pubmatic.crawler.service.CrawlerServiceCacheTest] [serviceName:web-crawlermatic-service] => Started CrawlerServiceCacheTest in 13.613 seconds (JVM running for 14.245)
+[2020-10-22 10:47:05,373] [Test worker] [INFO] [com.pubmatic.crawler.service.impl.CrawlerServiceImpl] [serviceName:web-crawlermatic-service] => Fetching contents for url: https://pubmatic.com
+[2020-10-22 10:47:06,353] [Test worker] [DEBUG] [com.pubmatic.crawler.service.impl.CrawlerServiceImpl] [serviceName:web-crawlermatic-service] => Fetched title: Programmatic Digital Advertising Technology & Solutions | PubMatic, links[<div class="search hidden"> 
+ <div class="content-middle"> 
+  <form method="get" action="/"> 
+   <a href="" class="pull-right close-icon"><span class="glyphicon glyphicon glyphicon-remove"></span></a> 
+   <div class="form-group pull-right"> 
+    <input type="text" name="s" placeholder="What can we help you find?" class="form-control input-lg"> 
+    <span class="glyphicon glyphicon-search"></span> 
+   </div> 
+  </form> 
+ </div> 
+</div>
+<div class="navigation pull-right"> 
+ <a href="" class="pull-right search-icon"><span class="glyphicon glyphicon-search"></span></a> 
+ <ul class="pull-right list-inline menu "> 
+  <li> <a href="/solutions/" data-dropdown="#20-dropdown" class="">Solutions</a> 
+   <div class="dropdown hidden" id="20-dropdown"> 
+    <div class="link-heading text-uppercase">
+     OUR Solutions 
+     <span class="view-more-btn pull-right"> <a href="/solutions/"> <span class="blue glyphicon glyphicon-menu-right" aria-hidden="true"></span> VIEW ALL </a> </span> 
+    </div> 
+    <ul class="list-unstyled"> 
+     <li><a href="https://pubmatic.com/solutions/publishers/" class="text-uppercase black-bluehover">For Publishers</a></li> 
+     <li><a href="https://pubmatic.com/solutions/buyers/" class="text-uppercase black-bluehover">For Buyers</a></li> 
+     <li><a href="https://pubmatic.com/solutions/mobile/" class="text-uppercase black-bluehover">For App Developers</a></li> 
+     <li><a href="https://pubmatic.com/solutions/video/" class="text-uppercase black-bluehover">For Video Publishers</a></li> 
+    </ul> 
+   </div> </li> 
+  <li> <a href="/products/" data-dropdown="#21-dropdown" class="">Products</a> 
+   <div class="dropdown hidden" id="21-dropdown"> 
+    <div class="link-heading text-uppercase">
+     OUR Products 
+     <span class="view-more-btn pull-right"> <a href="/products/"> <span class="blue glyphicon glyphicon-menu-right" aria-hidden="true"></span> VIEW ALL </a> </span> 
+    </div> 
+    <ul class="list-unstyled"> 
+     <li><a href="https://pubmatic.com/products/header-bidding/" class="text-uppercase black-bluehover">OPENWRAP</a></li> 
+     <li><a href="https://pubmatic.com/products/openwrap-ott/" class="text-uppercase black-bluehover">OPENWRAP OTT</a></li> 
+     <li><a href="https://pubmatic.com/products/openwrap-sdk/" class="text-uppercase black-bluehover">OPENWRAP SDK</a></li> 
+     <li><a href="https://pubmatic.com/products/programmatic-direct/" class="text-uppercase black-bluehover">PRIVATE MARKETPLACES</a></li> 
+     <li><a href="https://pubmatic.com/products/media-buyer-console/" class="text-uppercase black-bluehover">MEDIA BUYER CONSOLE</a></li> 
+     <li><a href="https://pubmatic.com/products/rtb-technologies/" class="text-uppercase black-bluehover">RTB ADVERTISING TECHNOLOGIES</a></li> 
+     <li><a href="https://pubmatic.com/products/inventory-quality/" class="text-uppercase black-bluehover">DIGITAL ADVERTISING INVENTORY QUALITY</a></li> 
+     <li><a href="https://pubmatic.com/products/ad-quality/" class="text-uppercase black-bluehover">AD QUALITY</a></li> 
+     <li><a href="https://pubmatic.com/products/identity-hub/" class="text-uppercase black-bluehover">IDENTITY RESOLUTION</a></li> 
+     <li><a href="https://pubmatic.com/products/audience-encore/" class="text-uppercase black-bluehover">AUDIENCE ENCORE</a></li> 
+     <li><a href="https://pubmatic.com/products/cross-platform-video/" class="text-uppercase black-bluehover">CROSS-PLATFORM VIDEO</a></li> 
+    </ul> 
+   </div> </li> 
+  <li> <a href="/thinking" data-dropdown="#7956-dropdown" class="">Resources</a> 
+   <div class="dropdown hidden" id="7956-dropdown"> 
+    <div class="link-heading text-uppercase">
+     OUR Resources 
+     <span class="view-more-btn pull-right"> <a href="/thinking"> <span class="blue glyphicon glyphicon-menu-right" aria-hidden="true"></span> VIEW ALL </a> </span> 
+    </div> 
+    <ul class="list-unstyled"> 
+     <li><a href="/blog" class="text-uppercase black-bluehover">PubMatic Blog</a></li> 
+     <li><a href="/reports" class="text-uppercase black-bluehover">Research</a></li> 
+     <li><a href="/case-studies" class="text-uppercase black-bluehover">Case Studies</a></li> 
+     <li><a href="http://events.pubmatic.com/#g-708591370" class="text-uppercase black-bluehover">PubAcademy</a></li> 
+     <li><a href="https://community.pubmatic.com/" class="text-uppercase black-bluehover">Documentation</a></li> 
+    </ul> 
+   </div> </li> 
+  <li> <a href="/about-us" data-dropdown="#8977-dropdown" class="">About</a> 
+   <div class="dropdown hidden" id="8977-dropdown"> 
+    <div class="link-heading text-uppercase">
+     OUR Company 
+    </div> 
+    <ul class="list-unstyled"> 
+     <li><a href="https://pubmatic.com/about-us/" class="text-uppercase black-bluehover">About Us</a></li> 
+     <li><a href="https://pubmatic.com/global-infrastructure/" class="text-uppercase black-bluehover">Global Infrastructure</a></li> 
+     <li><a href="https://pubmatic.com/locations/" class="text-uppercase black-bluehover">Locations</a></li> 
+     <li><a href="https://pubmatic.com/careers/" class="text-uppercase black-bluehover">Careers</a></li> 
+     <li><a href="/news/" class="text-uppercase black-bluehover">News</a></li> 
+     <li><a href="http://events.pubmatic.com/" class="text-uppercase black-bluehover">Events</a></li> 
+    </ul> 
+   </div> </li> 
+  <li> <a href="https://pubmatic.com/contact-us/" class="">Contact</a> </li> 
+ </ul> 
+ <ul class="dropdown list-unstyled hidden" id="login-dropdown"> 
+  <li><a href="https://apps.pubmatic.com/publisher/">PUBLISHERS</a></li> 
+  <li><a href="https://apps.pubmatic.com/mediaconsole/">MEDIA BUYERS</a></li> 
+ </ul> 
+</div>
+<div class="form-group pull-right"> 
+ <input type="text" name="s" placeholder="What can we help you find?" class="form-control input-lg"> 
+ <span class="glyphicon glyphicon-search"></span> 
+</div>
+<ul class="pull-right list-inline menu "> 
+ <li> <a href="/solutions/" data-dropdown="#20-dropdown" class="">Solutions</a> 
+  <div class="dropdown hidden" id="20-dropdown"> 
+   <div class="link-heading text-uppercase">
+    OUR Solutions 
+    <span class="view-more-btn pull-right"> <a href="/solutions/"> <span class="blue glyphicon glyphicon-menu-right" aria-hidden="true"></span> VIEW ALL </a> </span> 
+   </div> 
+   <ul class="list-unstyled"> 
+    <li><a href="https://pubmatic.com/solutions/publishers/" class="text-uppercase black-bluehover">For Publishers</a></li> 
+    <li><a href="https://pubmatic.com/solutions/buyers/" class="text-uppercase black-bluehover">For Buyers</a></li> 
+    <li><a href="https://pubmatic.com/solutions/mobile/" class="text-uppercase black-bluehover">For App Developers</a></li> 
+    <li><a href="https://pubmatic.com/solutions/video/" class="text-uppercase black-bluehover">For Video Publishers</a></li> 
+   </ul> 
+  </div> </li> 
+ <li> <a href="/products/" data-dropdown="#21-dropdown" class="">Products</a> 
+  <div class="dropdown hidden" id="21-dropdown"> 
+   <div class="link-heading text-uppercase">
+    OUR Products 
+    <span class="view-more-btn pull-right"> <a href="/products/"> <span class="blue glyphicon glyphicon-menu-right" aria-hidden="true"></span> VIEW ALL </a> </span> 
+   </div> 
+   <ul class="list-unstyled"> 
+    <li><a href="https://pubmatic.com/products/header-bidding/" class="text-uppercase black-bluehover">OPENWRAP</a></li> 
+    <li><a href="https://pubmatic.com/products/openwrap-ott/" class="text-uppercase black-bluehover">OPENWRAP OTT</a></li> 
+    <li><a href="https://pubmatic.com/products/openwrap-sdk/" class="text-uppercase black-bluehover">OPENWRAP SDK</a></li> 
+    <li><a href="https://pubmatic.com/products/programmatic-direct/" class="text-uppercase black-bluehover">PRIVATE MARKETPLACES</a></li> 
+    <li><a href="https://pubmatic.com/products/media-buyer-console/" class="text-uppercase black-bluehover">MEDIA BUYER CONSOLE</a></li> 
+    <li><a href="https://pubmatic.com/products/rtb-technologies/" class="text-uppercase black-bluehover">RTB ADVERTISING TECHNOLOGIES</a></li> 
+    <li><a href="https://pubmatic.com/products/inventory-quality/" class="text-uppercase black-bluehover">DIGITAL ADVERTISING INVENTORY QUALITY</a></li> 
+    <li><a href="https://pubmatic.com/products/ad-quality/" class="text-uppercase black-bluehover">AD QUALITY</a></li> 
+    <li><a href="https://pubmatic.com/products/identity-hub/" class="text-uppercase black-bluehover">IDENTITY RESOLUTION</a></li> 
+    <li><a href="https://pubmatic.com/products/audience-encore/" class="text-uppercase black-bluehover">AUDIENCE ENCORE</a></li> 
+    <li><a href="https://pubmatic.com/products/cross-platform-video/" class="text-uppercase black-bluehover">CROSS-PLATFORM VIDEO</a></li> 
+   </ul> 
+  </div> </li> 
+ <li> <a href="/thinking" data-dropdown="#7956-dropdown" class="">Resources</a> 
+  <div class="dropdown hidden" id="7956-dropdown"> 
+   <div class="link-heading text-uppercase">
+    OUR Resources 
+    <span class="view-more-btn pull-right"> <a href="/thinking"> <span class="blue glyphicon glyphicon-menu-right" aria-hidden="true"></span> VIEW ALL </a> </span> 
+   </div> 
+   <ul class="list-unstyled"> 
+    <li><a href="/blog" class="text-uppercase black-bluehover">PubMatic Blog</a></li> 
+    <li><a href="/reports" class="text-uppercase black-bluehover">Research</a></li> 
+    <li><a href="/case-studies" class="text-uppercase black-bluehover">Case Studies</a></li> 
+    <li><a href="http://events.pubmatic.com/#g-708591370" class="text-uppercase black-bluehover">PubAcademy</a></li> 
+    <li><a href="https://community.pubmatic.com/" class="text-uppercase black-bluehover">Documentation</a></li> 
+   </ul> 
+  </div> </li> 
+ <li> <a href="/about-us" data-dropdown="#8977-dropdown" class="">About</a> 
+  <div class="dropdown hidden" id="8977-dropdown"> 
+   <div class="link-heading text-uppercase">
+    OUR Company 
+   </div> 
+   <ul class="list-unstyled"> 
+    <li><a href="https://pubmatic.com/about-us/" class="text-uppercase black-bluehover">About Us</a></li> 
+    <li><a href="https://pubmatic.com/global-infrastructure/" class="text-uppercase black-bluehover">Global Infrastructure</a></li> 
+    <li><a href="https://pubmatic.com/locations/" class="text-uppercase black-bluehover">Locations</a></li> 
+    <li><a href="https://pubmatic.com/careers/" class="text-uppercase black-bluehover">Careers</a></li> 
+    <li><a href="/news/" class="text-uppercase black-bluehover">News</a></li> 
+    <li><a href="http://events.pubmatic.com/" class="text-uppercase black-bluehover">Events</a></li> 
+   </ul> 
+  </div> </li> 
+ <li> <a href="https://pubmatic.com/contact-us/" class="">Contact</a> </li> 
+</ul>
+<ul class="dropdown list-unstyled hidden" id="login-dropdown"> 
+ <li><a href="https://apps.pubmatic.com/publisher/">PUBLISHERS</a></li> 
+ <li><a href="https://apps.pubmatic.com/mediaconsole/">MEDIA BUYERS</a></li> 
+</ul>
+<div class="dropdown hidden" id="20-dropdown"> 
+ <div class="link-heading text-uppercase">
+  OUR Solutions 
+  <span class="view-more-btn pull-right"> <a href="/solutions/"> <span class="blue glyphicon glyphicon-menu-right" aria-hidden="true"></span> VIEW ALL </a> </span> 
+ </div> 
+ <ul class="list-unstyled"> 
+  <li><a href="https://pubmatic.com/solutions/publishers/" class="text-uppercase black-bluehover">For Publishers</a></li> 
+  <li><a href="https://pubmatic.com/solutions/buyers/" class="text-uppercase black-bluehover">For Buyers</a></li> 
+  <li><a href="https://pubmatic.com/solutions/mobile/" class="text-uppercase black-bluehover">For App Developers</a></li> 
+  <li><a href="https://pubmatic.com/solutions/video/" class="text-uppercase black-bluehover">For Video Publishers</a></li> 
+ </ul> 
+</div>
+<div class="dropdown hidden" id="21-dropdown"> 
+ <div class="link-heading text-uppercase">
+  OUR Products 
+  <span class="view-more-btn pull-right"> <a href="/products/"> <span class="blue glyphicon glyphicon-menu-right" aria-hidden="true"></span> VIEW ALL </a> </span> 
+ </div> 
+ <ul class="list-unstyled"> 
+  <li><a href="https://pubmatic.com/products/header-bidding/" class="text-uppercase black-bluehover">OPENWRAP</a></li> 
+  <li><a href="https://pubmatic.com/products/openwrap-ott/" class="text-uppercase black-bluehover">OPENWRAP OTT</a></li> 
+  <li><a href="https://pubmatic.com/products/openwrap-sdk/" class="text-uppercase black-bluehover">OPENWRAP SDK</a></li> 
+  <li><a href="https://pubmatic.com/products/programmatic-direct/" class="text-uppercase black-bluehover">PRIVATE MARKETPLACES</a></li> 
+  <li><a href="https://pubmatic.com/products/media-buyer-console/" class="text-uppercase black-bluehover">MEDIA BUYER CONSOLE</a></li> 
+  <li><a href="https://pubmatic.com/products/rtb-technologies/" class="text-uppercase black-bluehover">RTB ADVERTISING TECHNOLOGIES</a></li> 
+  <li><a href="https://pubmatic.com/products/inventory-quality/" class="text-uppercase black-bluehover">DIGITAL ADVERTISING INVENTORY QUALITY</a></li> 
+  <li><a href="https://pubmatic.com/products/ad-quality/" class="text-uppercase black-bluehover">AD QUALITY</a></li> 
+  <li><a href="https://pubmatic.com/products/identity-hub/" class="text-uppercase black-bluehover">IDENTITY RESOLUTION</a></li> 
+  <li><a href="https://pubmatic.com/products/audience-encore/" class="text-uppercase black-bluehover">AUDIENCE ENCORE</a></li> 
+  <li><a href="https://pubmatic.com/products/cross-platform-video/" class="text-uppercase black-bluehover">CROSS-PLATFORM VIDEO</a></li> 
+ </ul> 
+</div>
+<div class="dropdown hidden" id="7956-dropdown"> 
+ <div class="link-heading text-uppercase">
+  OUR Resources 
+  <span class="view-more-btn pull-right"> <a href="/thinking"> <span class="blue glyphicon glyphicon-menu-right" aria-hidden="true"></span> VIEW ALL </a> </span> 
+ </div> 
+ <ul class="list-unstyled"> 
+  <li><a href="/blog" class="text-uppercase black-bluehover">PubMatic Blog</a></li> 
+  <li><a href="/reports" class="text-uppercase black-bluehover">Research</a></li> 
+  <li><a href="/case-studies" class="text-uppercase black-bluehover">Case Studies</a></li> 
+  <li><a href="http://events.pubmatic.com/#g-708591370" class="text-uppercase black-bluehover">PubAcademy</a></li> 
+  <li><a href="https://community.pubmatic.com/" class="text-uppercase black-bluehover">Documentation</a></li> 
+ </ul> 
+</div>
+<div class="dropdown hidden" id="8977-dropdown"> 
+ <div class="link-heading text-uppercase">
+  OUR Company 
+ </div> 
+ <ul class="list-unstyled"> 
+  <li><a href="https://pubmatic.com/about-us/" class="text-uppercase black-bluehover">About Us</a></li> 
+  <li><a href="https://pubmatic.com/global-infrastructure/" class="text-uppercase black-bluehover">Global Infrastructure</a></li> 
+  <li><a href="https://pubmatic.com/locations/" class="text-uppercase black-bluehover">Locations</a></li> 
+  <li><a href="https://pubmatic.com/careers/" class="text-uppercase black-bluehover">Careers</a></li> 
+  <li><a href="/news/" class="text-uppercase black-bluehover">News</a></li> 
+  <li><a href="http://events.pubmatic.com/" class="text-uppercase black-bluehover">Events</a></li> 
+ </ul> 
+</div>
+<div class="toolbar-mobile hidden-md hidden-lg"> 
+ <ul class="list-unstyled text-uppercase"> 
+  <li class="list-search"> 
+   <form method="get" action="/"> 
+    <div class=""> 
+     <input type="text" name="s" placeholder="What can we help you find?" class="form-control"> 
+     <span class="glyphicon glyphicon-search"></span> 
+    </div> 
+   </form> </li> 
+  <li> <a href="/solutions/" class="">Solutions</a> 
+   <ul class="list-unstyled sub-list"> 
+    <li> <a href="/solutions/" class="black-bluehover">OVERVIEW</a> </li> 
+    <li> <a href="https://pubmatic.com/solutions/publishers/" class="text-uppercase black-bluehover">For Publishers</a> </li> 
+    <li> <a href="https://pubmatic.com/solutions/buyers/" class="text-uppercase black-bluehover">For Buyers</a> </li> 
+    <li> <a href="https://pubmatic.com/solutions/mobile/" class="text-uppercase black-bluehover">For App Developers</a> </li> 
+    <li> <a href="https://pubmatic.com/solutions/video/" class="text-uppercase black-bluehover">For Video Publishers</a> </li> 
+   </ul> </li> 
+  <li> <a href="/products/" class="">Products</a> 
+   <ul class="list-unstyled sub-list"> 
+    <li> <a href="/products/" class="black-bluehover">OVERVIEW</a> </li> 
+    <li> <a href="https://pubmatic.com/products/header-bidding/" class="text-uppercase black-bluehover">OPENWRAP</a> </li> 
+    <li> <a href="https://pubmatic.com/products/openwrap-ott/" class="text-uppercase black-bluehover">OPENWRAP OTT</a> </li> 
+    <li> <a href="https://pubmatic.com/products/openwrap-sdk/" class="text-uppercase black-bluehover">OPENWRAP SDK</a> </li> 
+    <li> <a href="https://pubmatic.com/products/programmatic-direct/" class="text-uppercase black-bluehover">PRIVATE MARKETPLACES</a> </li> 
+    <li> <a href="https://pubmatic.com/products/media-buyer-console/" class="text-uppercase black-bluehover">MEDIA BUYER CONSOLE</a> </li> 
+    <li> <a href="https://pubmatic.com/products/rtb-technologies/" class="text-uppercase black-bluehover">RTB ADVERTISING TECHNOLOGIES</a> </li> 
+    <li> <a href="https://pubmatic.com/products/inventory-quality/" class="text-uppercase black-bluehover">DIGITAL ADVERTISING INVENTORY QUALITY</a> </li> 
+    <li> <a href="https://pubmatic.com/products/ad-quality/" class="text-uppercase black-bluehover">AD QUALITY</a> </li> 
+    <li> <a href="https://pubmatic.com/products/identity-hub/" class="text-uppercase black-bluehover">IDENTITY RESOLUTION</a> </li> 
+    <li> <a href="https://pubmatic.com/products/audience-encore/" class="text-uppercase black-bluehover">AUDIENCE ENCORE</a> </li> 
+    <li> <a href="https://pubmatic.com/products/cross-platform-video/" class="text-uppercase black-bluehover">CROSS-PLATFORM VIDEO</a> </li> 
+   </ul> </li> 
+  <li> <a href="/thinking" class="">Resources</a> 
+   <ul class="list-unstyled sub-list"> 
+    <li> <a href="/thinking" class="black-bluehover">OVERVIEW</a> </li> 
+    <li> <a href="/blog" class="text-uppercase black-bluehover">PubMatic Blog</a> </li> 
+    <li> <a href="/reports" class="text-uppercase black-bluehover">Research</a> </li> 
+    <li> <a href="/case-studies" class="text-uppercase black-bluehover">Case Studies</a> </li> 
+    <li> <a href="http://events.pubmatic.com/#g-708591370" class="text-uppercase black-bluehover">PubAcademy</a> </li> 
+    <li> <a href="https://community.pubmatic.com/" class="text-uppercase black-bluehover">Documentation</a> </li> 
+   </ul> </li> 
+  <li> <a href="/about-us" class="">About</a> 
+   <ul class="list-unstyled sub-list"> 
+    <li> <a href="/about-us" class="black-bluehover">OVERVIEW</a> </li> 
+    <li> <a href="https://pubmatic.com/about-us/" class="text-uppercase black-bluehover">About Us</a> </li> 
+    <li> <a href="https://pubmatic.com/global-infrastructure/" class="text-uppercase black-bluehover">Global Infrastructure</a> </li> 
+    <li> <a href="https://pubmatic.com/locations/" class="text-uppercase black-bluehover">Locations</a> </li> 
+    <li> <a href="https://pubmatic.com/careers/" class="text-uppercase black-bluehover">Careers</a> </li> 
+    <li> <a href="/news/" class="text-uppercase black-bluehover">News</a> </li> 
+    <li> <a href="http://events.pubmatic.com/" class="text-uppercase black-bluehover">Events</a> </li> 
+   </ul> </li> 
+  <li> <a href="https://pubmatic.com/contact-us/" class="">Contact</a> </li> 
+  <li class="list-login"> <a href=""> 
+    <!-- translation --> LOGIN </a> 
+   <ul class="list-unstyled sub-list"> 
+    <li><a href="https://apps.pubmatic.com/publisher/">PUBLISHERS</a></li> 
+    <li><a href="https://apps.pubmatic.com/mediaconsole/">MEDIA BUYERS</a></li> 
+   </ul> </li> 
+ </ul> 
+</div>
+<ul class="list-unstyled sub-list"> 
+ <li> <a href="/solutions/" class="black-bluehover">OVERVIEW</a> </li> 
+ <li> <a href="https://pubmatic.com/solutions/publishers/" class="text-uppercase black-bluehover">For Publishers</a> </li> 
+ <li> <a href="https://pubmatic.com/solutions/buyers/" class="text-uppercase black-bluehover">For Buyers</a> </li> 
+ <li> <a href="https://pubmatic.com/solutions/mobile/" class="text-uppercase black-bluehover">For App Developers</a> </li> 
+ <li> <a href="https://pubmatic.com/solutions/video/" class="text-uppercase black-bluehover">For Video Publishers</a> </li> 
+</ul>
+<ul class="list-unstyled sub-list"> 
+ <li> <a href="/products/" class="black-bluehover">OVERVIEW</a> </li> 
+ <li> <a href="https://pubmatic.com/products/header-bidding/" class="text-uppercase black-bluehover">OPENWRAP</a> </li> 
+ <li> <a href="https://pubmatic.com/products/openwrap-ott/" class="text-uppercase black-bluehover">OPENWRAP OTT</a> </li> 
+ <li> <a href="https://pubmatic.com/products/openwrap-sdk/" class="text-uppercase black-bluehover">OPENWRAP SDK</a> </li> 
+ <li> <a href="https://pubmatic.com/products/programmatic-direct/" class="text-uppercase black-bluehover">PRIVATE MARKETPLACES</a> </li> 
+ <li> <a href="https://pubmatic.com/products/media-buyer-console/" class="text-uppercase black-bluehover">MEDIA BUYER CONSOLE</a> </li> 
+ <li> <a href="https://pubmatic.com/products/rtb-technologies/" class="text-uppercase black-bluehover">RTB ADVERTISING TECHNOLOGIES</a> </li> 
+ <li> <a href="https://pubmatic.com/products/inventory-quality/" class="text-uppercase black-bluehover">DIGITAL ADVERTISING INVENTORY QUALITY</a> </li> 
+ <li> <a href="https://pubmatic.com/products/ad-quality/" class="text-uppercase black-bluehover">AD QUALITY</a> </li> 
+ <li> <a href="https://pubmatic.com/products/identity-hub/" class="text-uppercase black-bluehover">IDENTITY RESOLUTION</a> </li> 
+ <li> <a href="https://pubmatic.com/products/audience-encore/" class="text-uppercase black-bluehover">AUDIENCE ENCORE</a> </li> 
+ <li> <a href="https://pubmatic.com/products/cross-platform-video/" class="text-uppercase black-bluehover">CROSS-PLATFORM VIDEO</a> </li> 
+</ul>
+<ul class="list-unstyled sub-list"> 
+ <li> <a href="/thinking" class="black-bluehover">OVERVIEW</a> </li> 
+ <li> <a href="/blog" class="text-uppercase black-bluehover">PubMatic Blog</a> </li> 
+ <li> <a href="/reports" class="text-uppercase black-bluehover">Research</a> </li> 
+ <li> <a href="/case-studies" class="text-uppercase black-bluehover">Case Studies</a> </li> 
+ <li> <a href="http://events.pubmatic.com/#g-708591370" class="text-uppercase black-bluehover">PubAcademy</a> </li> 
+ <li> <a href="https://community.pubmatic.com/" class="text-uppercase black-bluehover">Documentation</a> </li> 
+</ul>
+<ul class="list-unstyled sub-list"> 
+ <li> <a href="/about-us" class="black-bluehover">OVERVIEW</a> </li> 
+ <li> <a href="https://pubmatic.com/about-us/" class="text-uppercase black-bluehover">About Us</a> </li> 
+ <li> <a href="https://pubmatic.com/global-infrastructure/" class="text-uppercase black-bluehover">Global Infrastructure</a> </li> 
+ <li> <a href="https://pubmatic.com/locations/" class="text-uppercase black-bluehover">Locations</a> </li> 
+ <li> <a href="https://pubmatic.com/careers/" class="text-uppercase black-bluehover">Careers</a> </li> 
+ <li> <a href="/news/" class="text-uppercase black-bluehover">News</a> </li> 
+ <li> <a href="http://events.pubmatic.com/" class="text-uppercase black-bluehover">Events</a> </li> 
+</ul>
+<ul class="list-unstyled sub-list"> 
+ <li><a href="https://apps.pubmatic.com/publisher/">PUBLISHERS</a></li> 
+ <li><a href="https://apps.pubmatic.com/mediaconsole/">MEDIA BUYERS</a></li> 
+</ul>
+<div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog"> 
+ <div class="modal-dialog modal-sm" role="document"> 
+  <div class="modal-content text-black"> 
+   <div class="modal-header"> 
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> 
+    <h4 class="modal-title"> 
+     <!-- translation --> SUBSCRIBE TO UPDATES </h4> 
+   </div> 
+   <div class="modal-body"> 
+    <iframe class="pardotform" src="https://go.pardot.com/l/214271/2016-12-19/897r" width="100%" height="510" type="text/html" frameborder="0" allowtransparency="true" style="border: 0"></iframe> 
+   </div> 
+  </div> 
+ </div> 
+</div>
+<a href="https://pubmatic.com/reports/diversity-and-inclusion-report-2020/" class="featured black-link"> 
+ <div class="featured-img"> 
+  <img width="555" height="310" src="https://pubmatic.com/wp-content/uploads/2020/08/PubMatic-2020-Diversity-Inclusion-ReportThumb-555x310.jpg" class="img-responsive" alt="" srcset="https://pubmatic.com/wp-content/uploads/2020/08/PubMatic-2020-Diversity-Inclusion-ReportThumb-555x310.jpg 555w, https://pubmatic.com/wp-content/uploads/2020/08/PubMatic-2020-Diversity-Inclusion-ReportThumb-555x310-300x168.jpg 300w, https://pubmatic.com/wp-content/uploads/2020/08/PubMatic-2020-Diversity-Inclusion-ReportThumb-555x310-360x200.jpg 360w" sizes="(max-width: 555px) 100vw, 555px"> 
+ </div> 
+ <div class="card-body"> 
+  <h4 class="small-blue-bar-header featured-title">Diversity and Inclusion Report 2020</h4> 
+  <div class="featured-body">
+    Our Diversity and Inclusion report details our success in hiring &amp; developing diverse talent plus… 
+  </div> 
+ </div> </a>
+<a href="https://pubmatic.com/blog/beyond-the-cookie-how-digital-advertising-can-evolve-on-the-open-web/" class="featured black-link"> 
+ <div class="featured-img"> 
+  <img width="750" height="417" src="https://pubmatic.com/wp-content/uploads/2020/04/Virtual-PubAcademy-750x417.jpg" class="img-responsive wp-post-image" alt="" srcset="https://pubmatic.com/wp-content/uploads/2020/04/Virtual-PubAcademy-750x417.jpg 750w, https://pubmatic.com/wp-content/uploads/2020/04/Virtual-PubAcademy-750x417-300x167.jpg 300w, https://pubmatic.com/wp-content/uploads/2020/04/Virtual-PubAcademy-750x417-360x200.jpg 360w" sizes="(max-width: 750px) 100vw, 750px"> 
+ </div> 
+ <div class="card-body"> 
+  <h4 class="small-blue-bar-header featured-title">Beyond the Cookie: How Digital Advertising Can Evolve on the Open Web</h4> 
+  <div class="featured-body">
+    As the demise of third-party cookies on Chrome draws ever nearer, brands and publishers must… 
+  </div> 
+ </div> </a>
+<a href="https://pubmatic.com/reports/pubmatic-quarterly-mobile-index-qmi-q2-2020/" class="featured black-link" style=""> 
+ <div class="desktop-featured-img"> 
+  <img width="555" height="310" src="https://pubmatic.com/wp-content/uploads/2020/08/PubMatic-QMI-Q2-2020-Homepage-Thumb-555x310.jpg" class="img-responsive" alt="" srcset="https://pubmatic.com/wp-content/uploads/2020/08/PubMatic-QMI-Q2-2020-Homepage-Thumb-555x310.jpg 555w, https://pubmatic.com/wp-content/uploads/2020/08/PubMatic-QMI-Q2-2020-Homepage-Thumb-555x310-300x168.jpg 300w, https://pubmatic.com/wp-content/uploads/2020/08/PubMatic-QMI-Q2-2020-Homepage-Thumb-555x310-360x200.jpg 360w" sizes="(max-width: 555px) 100vw, 555px"> 
+ </div> 
+ <div class="card-body"> 
+  <h4 class="small-blue-bar-header featured-title">PubMatic Quarterly Mobile Index (QMI) Q2 2020</h4> 
+  <div class="featured-body">
+    PubMatic released its Q2 2020 Quarterly Mobile Index (QMI), highlighting key trends and insights in… 
+  </div> 
+ </div> </a>
+<a href="https://pubmatic.com/reports/diversity-and-inclusion-report-2020/" class="featured black-link" style="display: block; margin-top: 20px;"> 
+ <div class="desktop-featured-img"> 
+  <img width="555" height="310" src="https://pubmatic.com/wp-content/uploads/2020/08/PubMatic-2020-Diversity-Inclusion-ReportThumb-555x310.jpg" class="img-responsive" alt="" srcset="https://pubmatic.com/wp-content/uploads/2020/08/PubMatic-2020-Diversity-Inclusion-ReportThumb-555x310.jpg 555w, https://pubmatic.com/wp-content/uploads/2020/08/PubMatic-2020-Diversity-Inclusion-ReportThumb-555x310-300x168.jpg 300w, https://pubmatic.com/wp-content/uploads/2020/08/PubMatic-2020-Diversity-Inclusion-ReportThumb-555x310-360x200.jpg 360w" sizes="(max-width: 555px) 100vw, 555px"> 
+ </div> 
+ <div class="card-body"> 
+  <h4 class="small-blue-bar-header featured-title">Diversity and Inclusion Report 2020</h4> 
+  <div class="featured-body">
+    Our Diversity and Inclusion report details our success in hiring &amp; developing diverse talent plus… 
+  </div> 
+ </div> </a>
+<a href="https://pubmatic.com/reports/diversity-and-inclusion-report-2020/" class="featured black-link" style="display: block; margin-top: 20px;"> 
+ <div class="desktop-featured-img"> 
+  <img width="555" height="310" src="https://pubmatic.com/wp-content/uploads/2020/08/PubMatic-2020-Diversity-Inclusion-ReportThumb-555x310.jpg" class="img-responsive" alt="" srcset="https://pubmatic.com/wp-content/uploads/2020/08/PubMatic-2020-Diversity-Inclusion-ReportThumb-555x310.jpg 555w, https://pubmatic.com/wp-content/uploads/2020/08/PubMatic-2020-Diversity-Inclusion-ReportThumb-555x310-300x168.jpg 300w, https://pubmatic.com/wp-content/uploads/2020/08/PubMatic-2020-Diversity-Inclusion-ReportThumb-555x310-360x200.jpg 360w" sizes="(max-width: 555px) 100vw, 555px"> 
+ </div> 
+ <div class="card-body"> 
+  <h4 class="small-blue-bar-header featured-title">Diversity and Inclusion Report 2020</h4> 
+  <div class="featured-body">
+    Our Diversity and Inclusion report details our success in hiring &amp; developing diverse talent plus… 
+  </div> 
+ </div> </a>
+<a href="https://pubmatic.com/blog/unboxed-why-is-adtech-so-complicated/" class="featured black-link" style=""> 
+ <div class="desktop-featured-img"> 
+  <img width="1920" height="1068" src="https://pubmatic.com/wp-content/uploads/2020/10/Unboxed-Podcast-Jason-Barnes.png" class="img-responsive wp-post-image" alt="" srcset="https://pubmatic.com/wp-content/uploads/2020/10/Unboxed-Podcast-Jason-Barnes.png 1920w, https://pubmatic.com/wp-content/uploads/2020/10/Unboxed-Podcast-Jason-Barnes-300x167.png 300w, https://pubmatic.com/wp-content/uploads/2020/10/Unboxed-Podcast-Jason-Barnes-768x427.png 768w, https://pubmatic.com/wp-content/uploads/2020/10/Unboxed-Podcast-Jason-Barnes-1024x570.png 1024w, https://pubmatic.com/wp-content/uploads/2020/10/Unboxed-Podcast-Jason-Barnes-360x200.png 360w" sizes="(max-width: 1920px) 100vw, 1920px"> 
+ </div> 
+ <div class="card-body"> 
+  <h4 class="small-blue-bar-header featured-title">Unboxed: Why is Adtech so Complicated</h4> 
+  <div class="featured-body">
+    In this episode of "Unboxed", we speak to PubMatic's Jason Barnes on how marketers can… 
+  </div> 
+ </div> </a>
+<a href="https://pubmatic.com/blog/beyond-the-cookie-how-digital-advertising-can-evolve-on-the-open-web/" class="featured black-link" style="display: block; margin-top: 20px;"> 
+ <div class="desktop-featured-img"> 
+  <img width="750" height="417" src="https://pubmatic.com/wp-content/uploads/2020/04/Virtual-PubAcademy-750x417.jpg" class="img-responsive wp-post-image" alt="" srcset="https://pubmatic.com/wp-content/uploads/2020/04/Virtual-PubAcademy-750x417.jpg 750w, https://pubmatic.com/wp-content/uploads/2020/04/Virtual-PubAcademy-750x417-300x167.jpg 300w, https://pubmatic.com/wp-content/uploads/2020/04/Virtual-PubAcademy-750x417-360x200.jpg 360w" sizes="(max-width: 750px) 100vw, 750px"> 
+ </div> 
+ <div class="card-body"> 
+  <h4 class="small-blue-bar-header featured-title">Beyond the Cookie: How Digital Advertising Can Evolve on the Open Web</h4> 
+  <div class="featured-body">
+    As the demise of third-party cookies on Chrome draws ever nearer, brands and publishers must… 
+  </div> 
+ </div> </a>
+<a href="https://pubmatic.com/blog/beyond-the-cookie-how-digital-advertising-can-evolve-on-the-open-web/" class="featured black-link" style="display: block; margin-top: 20px;"> 
+ <div class="desktop-featured-img"> 
+  <img width="750" height="417" src="https://pubmatic.com/wp-content/uploads/2020/04/Virtual-PubAcademy-750x417.jpg" class="img-responsive wp-post-image" alt="" srcset="https://pubmatic.com/wp-content/uploads/2020/04/Virtual-PubAcademy-750x417.jpg 750w, https://pubmatic.com/wp-content/uploads/2020/04/Virtual-PubAcademy-750x417-300x167.jpg 300w, https://pubmatic.com/wp-content/uploads/2020/04/Virtual-PubAcademy-750x417-360x200.jpg 360w" sizes="(max-width: 750px) 100vw, 750px"> 
+ </div> 
+ <div class="card-body"> 
+  <h4 class="small-blue-bar-header featured-title">Beyond the Cookie: How Digital Advertising Can Evolve on the Open Web</h4> 
+  <div class="featured-body">
+    As the demise of third-party cookies on Chrome draws ever nearer, brands and publishers must… 
+  </div> 
+ </div> </a>
+<a href="/products/">Products</a>
+<a href="https://pubmatic.com/thinking/">Resources</a>
+<a href="https://pubmatic.com/about-us/">About Us</a>
+<a href="/careers/">Careers</a>
+<a href="https://community.pubmatic.com/">Community</a>
+<a href="https://pubmatic.com/thinking/">Resources</a>
+<a href="https://pubmatic.com/about-us/">About Us</a>
+<a href="/careers/">Careers</a>
+<a href="https://community.pubmatic.com/">Community</a>
+<a href="https://pubmatic.com/about-us/">About Us</a>
+<a href="/careers/">Careers</a>
+<a href="https://community.pubmatic.com/">Community</a>
+<a href="/careers/">Careers</a>
+<a href="https://community.pubmatic.com/">Community</a>
+<a href="https://community.pubmatic.com/">Community</a>
+<a href="https://twitter.com/PubMatic"><i class="icon-social-twitter"></i></a>
+<a href="https://www.linkedin.com/company/PubMatic"><i class="icon-social-linkedin"></i></a>
+<a href="https://www.linkedin.com/company/PubMatic"><i class="icon-social-linkedin"></i></a>
+<div class="dropdown-menu"> 
+ <ul class="list-unstyled"> 
+  <li> <a href="https://pubmatic.com/" data-slug="en">English</a> </li> 
+  <li> <a href="https://www.pubmatic.co.jp/" data-slug="ja">日本語</a> </li> 
+ </ul> 
+</div>
+<br>
+<a href="https://pubmatic.com/legal/opt-out/">OPT-OUT</a>
+<br>
+<a href="/legal/website-terms-of-service/">Website Terms of Service</a>
+<br>
+<a href="https://pubmatic.com/legal/pubmatic-legal-policies/">PubMatic Legal Policies</a>
+<br>
+<br>
+<a href="/legal/website-terms-of-service/">Website Terms of Service</a>
+<br>
+<a href="https://pubmatic.com/legal/pubmatic-legal-policies/">PubMatic Legal Policies</a>
+<br>
+<br>
+<a href="https://pubmatic.com/legal/pubmatic-legal-policies/">PubMatic Legal Policies</a>
+<br>
+<br>] for url: https://pubmatic.com
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

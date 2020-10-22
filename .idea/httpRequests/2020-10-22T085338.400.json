@@ -1,0 +1,8 @@
+{
+  "timestamp": "2020-10-22T14:53:38.841+0000",
+  "status": 400,
+  "error": "Bad Request",
+  "exception": "org.springframework.web.bind.MissingServletRequestParameterException",
+  "message": "Required String parameter 'url' is not present",
+  "path": "/web-crawler-service/crawler"
+}
