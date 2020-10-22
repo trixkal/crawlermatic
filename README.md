@@ -31,3 +31,7 @@ http://localhost:8090/web-crawlermatic-service/crawler?url=<pageUrl>&depth=<dept
 Example for a quick test over PostMan or any rest client:
 
 http://localhost:8090/web-crawlermatic-service/crawler?url=https://pubmatic.com/&depth=3
+
+Heroku like ready to go:
+
+https://crawlmatic.herokuapp.com/web-crawlermatic-service/crawler?url=https://pubmatic.com/&depth=3
